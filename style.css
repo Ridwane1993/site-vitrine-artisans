@@ -239,6 +239,38 @@ form button{
   transition:transform 0.15s ease;
 }
 form button:hover{transform:translateY(-2px);}
+/* COMPETENCES / PROJETS */
+.projects-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:24px;
+}
+.project-card{
+  background:var(--ink);
+  color:var(--paper);
+  padding:28px 24px;
+  border-radius:3px;
+  border-top:3px solid var(--blueprint);
+}
+.project-card.muted{
+  background:transparent;
+  border:1px dashed #ccc6b8;
+  color:var(--charcoal);
+}
+.project-card.muted .project-tag{color:var(--blueprint);}
+.project-card.muted h3{color:var(--charcoal);}
+.project-card.muted p{color:#5a5a5a;}
+.project-tag{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:0.7rem;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  color:var(--brass-light);
+  display:block;
+  margin-bottom:10px;
+}
+.project-card h3{font-size:1.2rem; margin-bottom:10px;}
+.project-card p{font-size:0.92rem; color:rgba(247,245,240,0.75); line-height:1.55;}
 
 footer{
   text-align:center;
@@ -257,4 +289,8 @@ footer{
 
 @media (prefers-reduced-motion: reduce){
   *{transition:none !important;}
+}
+
+@media (max-width:760px){
+  .split, .plans, .reassure-grid, .projects-grid{grid-template-columns:1fr;}
 }
